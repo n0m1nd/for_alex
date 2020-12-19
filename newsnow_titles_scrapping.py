@@ -22,7 +22,7 @@ if response.status_code == requests.codes.ok:
     soup = BeautifulSoup(response.text, "html.parser")
     # Get a list of titles and write to file
     # Open file for writing
-    with open('titles_list.txt', 'w') as titles_list:   
+    with open('titles_list.txt', 'w', encoding='utf-8') as titles_list:   
         # Get elements with 'a class="hll"' where titles are
         for element in soup.find_all('a', class_='hll'):
             # Write every title to file
